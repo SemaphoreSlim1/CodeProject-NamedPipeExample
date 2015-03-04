@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts{
+
+    <script type="text/javascript" language="javascript">
+        $('#btnAddWork').click(function () {
+            $.ajax({
+                url: "/Api/Queue",
+                type: 'POST',
+                success: function (data, textStatus, jqXHR) {
+                    alert('Success');
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("Error");
+                }
+            });
+        });
+    </script>
+}
+
+<h2>Index</h2>
+
+<!-- Standard button -->
+<button type="button" class="btn btn-default" id="btnAddWork">Default</button>
+
